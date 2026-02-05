@@ -3,42 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Peixoto | Portfólio Profissional</title>
+    <title>Edgar Peixoto | Engenharia de Software & Maker</title>
     
-    <meta name="description" content="Portfólio de Edgar Peixoto: Especialista em Impressão 3D, Modelagem e Desenvolvimento de Jogos Indie.">
-    <meta name="keywords" content="Impressão 3D, Godot, Game Dev, Modelagem, Edgar Peixoto, Serra ES">
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Portfólio de Edgar Peixoto. Analista de Sistemas, Pós-graduado em Gestão de TI e entusiasta de Impressão 3D e Game Dev.">
+    <meta name="keywords" content="Edgar Peixoto, Engenharia de Software, Impressão 3D, Godot Engine, Serra ES, Vallourec, Búzios Project">
     
-    <meta property="og:title" content="Edgar Peixoto | Portfólio">
-    <meta property="og:description" content="Confira meus projetos de 3D e desenvolvimento de jogos.">
-    <meta property="og:image" content="assets/images/og-image.jpg"> <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <section id="hero">
-    <h1>Edgar Peixoto</h1>
-    <p>Criando soluções entre o mundo digital e o físico.</p>
-    <div class="bio">
-        <p>Especialista em Impressão 3D (FDM/Resina) e Desenvolvedor Indie de Jogos (Godot).</p>
-        <p>Experiência em controle de produção industrial e processos técnicos.</p>
-    </div>
-</section>
+    <!-- Navegação -->
+    <header id="header">
+        <div class="logo">EDGAR<span>.</span>P</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="#contato" class="btn-small">Contrate-me</a>
+        </div>
+    </header>
 
-<section id="projetos">
-    <h2>Destaques 3D</h2>
-    <div class="grid-container">
-        <article class="project-card">
-            <h3>Godzilla - Pintura Realista</h3>
-            <p>Modelo impresso em alta resolução com acabamento manual em acrílico.</p>
-            <img src="assets/images/godzilla.webp" alt="Modelo Godzilla" style="width:100%; border-radius:4px;">
-        </article>
-        
-        <article class="project-card">
-            <h3>Steel Core 3D - Peças Técnicas</h3>
-            <p>Desenvolvimento de protótipos e peças funcionais.</p>
-        </article>
-    </div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <section id="sobre" class="hero section-reveal">
+            <div class="hero-content">
+                <span class="badge-intro">Disponível para Projetos</span>
+                <h1>Construindo o futuro entre <span>bits</span> e <span>átomos</span>.</h1>
+                <p>Sou Edgar Peixoto, Analista de Sistemas e Pós-graduado em Gestão de TI. Atualmente cursando Engenharia de Software e explorando o universo Maker com a <strong>Steel Core 3D</strong>.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn-primary">Ver Projetos</a>
+                    <a href="#formacao" class="btn-secondary">Minha Jornada</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="world-animation"></div>
+                <div class="profile-frame">
+                    <img src="assets/images/minha-foto.png" alt="Edgar Peixoto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação Acadêmica -->
+        <section id="formacao" class="section-reveal">
+            <h2 class="section-title">Formação Acadêmica</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-marker"></div>
+                    <div class="time-content">
+                        <span class="status-pill in-progress">Em Curso</span>
+                        <h3>Bacharelado em Engenharia de Software</h3>
+                        <p>Foco em escalabilidade, design patterns e sistemas críticos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-marker"></div>
+                    <div class="time-content">
+                        <span class="status-pill completed">Concluído</span>
+                        <h3>Pós-Graduação em Gestão de TI</h3>
+                        <p>Especialização em governança, estratégia e liderança de times técnicos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-marker"></div>
+                    <div class="time-content">
+                        <span class="status-pill completed">Concluído</span>
+                        <h3>Tecnólogo em Análise e Desenv. de Sistemas</h3>
+                        <p>Formação base em desenvolvimento full-stack e banco de dados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hard Skills -->
+        <section id="skills" class="section-reveal">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>Desenvolvimento</h4>
+                    <p>JS, HTML5, CSS3, Git, GitHub, Engenharia de Software.</p>
+                </div>
+                <div class="skill-group">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h4>Game Dev</h4>
+                    <p>Godot Engine, Aseprite (Pixel Art), Game Design.</p>
+                </div>
+                <div class="skill-group">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h4>Industrial Tech</h4>
+                    <p>SAP, Excel (VBA/Dashboards), SharePoint, Projetos Raia/Búzios.</p>
+                </div>
+                <div class="skill-group">
+                    <i class="fa-solid fa-cubes"></i>
+                    <h4>Maker Skills</h4>
+                    <p>Impressão 3D (FDM), Prototipagem, Pintura de Colecionáveis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfólio -->
+        <section id="portfolio" class="section-reveal">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="filter-wrapper">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="maker">Maker / 3D</button>
+                <button class="filter-btn" data-filter="dev">Game Dev</button>
+                <button class="filter-btn" data-filter="work">Industrial</button>
+            </div>
+            
+            <div class="portfolio-container">
+                <!-- Projeto 1 -->
+                <div class="project-card maker">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div class="project-details">
+                        <span class="tag">Steel Core 3D</span>
+                        <h3>Colecionáveis Customizados</h3>
+                        <p>Processo completo de impressão e acabamento de modelos complexos.</p>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="project-card dev">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="project-details">
+                        <span class="tag">Godot Engine</span>
+                        <h3>RPG de Turno 16-bit</h3>
+                        <p>Desenvolvimento de mecânicas de combate e sistema de inventário.</p>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="project-card work">
+                    <div class="project-img-placeholder">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="project-details">
+                        <span class="tag">Gestão Industrial</span>
+                        <h3>Controle Projeto Búzios</h3>
+                        <p>Otimização de fluxos de revestimento e rastreabilidade Vallourec.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Diário -->
+        <section id="blog" class="section-reveal">
+            <h2 class="section-title">Diário Maker & Estudos</h2>
+            <div class="blog-preview">
+                <article class="blog-card">
+                    <div class="date">05 FEV 2026</div>
+                    <h4>Otimizando G-Code para peças técnicas</h4>
+                    <p>Como reduzi o tempo de impressão em 20% mantendo a resistência...</p>
+                    <a href="#" class="read-more">Ler mais →</a>
+                </article>
+                <article class="blog-card">
+                    <div class="date">01 FEV 2026</div>
+                    <h4>Arquitetura Clean na Engenharia de Software</h4>
+                    <p>Minhas primeiras impressões aplicando SOLID em projetos reais...</p>
+                    <a href="#" class="read-more">Ler mais →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="section-reveal">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>Estou sempre aberto a parcerias em projetos de impressão 3D ou oportunidades na área de Engenharia de Software.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="email-direct">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>edgar.peixoto@devmaker.com</span>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Como posso te ajudar?" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Edgar Peixoto. Made with <i class="fa-solid fa-heart"></i> & Code.</p>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
