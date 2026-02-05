@@ -1,0 +1,77 @@
+:root {
+    --bg-color: #0d1117;       /* Fundo escuro estilo GitHub */
+    --card-bg: #161b22;        /* Fundo dos cards de projeto */
+    --text-primary: #f0f6fc;   /* Texto quase branco */
+    --accent-color: #58a6ff;   /* Azul tech para links e botões */
+    --accent-hover: #1f6feb;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(13, 17, 23, 0.9);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #30363d;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+section {
+    padding: 100px 10%;
+    min-height: 100vh;
+}
+
+/* Efeito de Card para seus Projetos 3D e Jogos */
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+h1, h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
