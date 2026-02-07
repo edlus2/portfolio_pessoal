@@ -10,24 +10,24 @@
     
     <!-- Fontes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- SEÇÃO 1: CSS (ESTILO) -->
     <style>
-        /* --- CONFIGURAÇÕES DO TEMA (Professional Light & Slate) --- */
+        /* --- CONFIGURAÇÕES DO TEMA --- */
         :root {
-            --bg-main: #f8fafc;      /* Fundo Principal Claro (Slate 50) */
-            --bg-alt: #f1f5f9;       /* Fundo Alternativo (Slate 100) */
-            --surface: #ffffff;      /* Superfície Branca para Cards */
-            --accent: #4f46e5;       /* Indigo Profissional (Indigo 600) */
+            --bg-main: #f8fafc;
+            --bg-alt: #f1f5f9;
+            --surface: #ffffff;
+            --accent: #4f46e5;
             --accent-glow: rgba(79, 70, 229, 0.1);
-            --text-main: #0f172a;    /* Texto Escuro (Slate 900) */
-            --text-dim: #475569;     /* Texto Secundário (Slate 600) */
-            --border: #e2e8f0;       /* Bordas Claras (Slate 200) */
-            --success: #16a34a;      /* Verde para itens Concluídos */
+            --text-main: #0f172a;
+            --text-dim: #475569;
+            --border: #e2e8f0;
+            --success: #16a34a;
             --success-bg: #f0fdf4;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -120,10 +120,7 @@
         }
 
         /* --- SEÇÕES & ESPAÇAMENTO --- */
-        .section-padding {
-            padding: 140px 0;
-        }
-
+        .section-padding { padding: 140px 0; }
         .bg-alt { background-color: var(--bg-alt); }
 
         .section-header {
@@ -165,9 +162,7 @@
             letter-spacing: -2px;
         }
 
-        .hero-content h1 span {
-            color: var(--accent);
-        }
+        .hero-content h1 span { color: var(--accent); }
 
         .hero-content p {
             font-size: 1.25rem;
@@ -186,6 +181,8 @@
             transition: var(--transition);
             display: inline-block;
             cursor: pointer;
+            border: none;
+            font-family: inherit;
         }
 
         .btn-primary { background: var(--accent); color: white; border: 1px solid var(--accent); }
@@ -193,7 +190,7 @@
 
         .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); }
 
-        /* --- Hero Visual & Mundo Rodando --- */
+        /* --- Hero Visual --- */
         .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 
         .world-orb {
@@ -222,6 +219,7 @@
             position: relative;
             border: 8px solid var(--surface);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: var(--bg-alt);
         }
 
         .profile-mask img { width: 100%; height: 100%; object-fit: cover; }
@@ -240,6 +238,8 @@
             border: 1px solid var(--border);
             transition: var(--transition);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
         }
 
         .timeline-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.05); }
@@ -248,9 +248,8 @@
 
         .date { font-size: 0.75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; display: block; margin-bottom: 10px; }
 
-        /* --- BADGES DE STATUS --- */
         .status-pill {
-            display: inline-block;
+            align-self: flex-start;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.7rem;
@@ -290,6 +289,7 @@
             display: flex;
             justify-content: center;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
         .filter-btn {
@@ -318,7 +318,6 @@
             overflow: hidden;
             border: 1px solid var(--border);
             transition: var(--transition);
-            opacity: 1;
         }
 
         .project-img {
@@ -333,17 +332,8 @@
 
         .project-info { padding: 30px; }
         .project-info h5 { font-size: 1.2rem; margin-bottom: 10px; }
-        
-        /* Estilo do link no título */
-        .project-info h5 a {
-            text-decoration: none;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-
-        .project-info h5 a:hover {
-            color: var(--accent);
-        }
+        .project-info h5 a { text-decoration: none; color: var(--text-main); transition: var(--transition); }
+        .project-info h5 a:hover { color: var(--accent); }
 
         /* --- BLOG --- */
         .blog-grid {
@@ -358,11 +348,9 @@
             border-radius: 24px;
             border-top: 4px solid var(--accent);
             transition: var(--transition);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .post-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-
         .post-tag { font-size: 0.75rem; font-weight: 800; color: var(--accent); margin-bottom: 15px; display: block; }
         .post-link { text-decoration: none; color: var(--accent); font-weight: 700; margin-top: 20px; display: inline-block; font-size: 0.9rem; }
 
@@ -375,7 +363,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
         }
 
         .contact-links { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
@@ -416,7 +403,6 @@
         @media (max-width: 1024px) {
             .hero-grid, .timeline-grid, .skills-grid, .contact-card, .blog-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 3rem; }
-            .contact-card { padding: 40px; gap: 40px; }
             .hero-visual { order: -1; margin-bottom: 40px; }
             .profile-mask { width: 300px; height: 300px; }
             .world-orb { width: 380px; height: 380px; }
@@ -459,13 +445,13 @@
                 <div class="hero-visual reveal">
                     <div class="world-orb"></div>
                     <div class="profile-mask">
-                        <img src="assets/images/minha-foto.png" alt="Edgar Peixoto - Perfil" onerror="this.src='https://via.placeholder.com/400x400/f1f5f9/4f46e5?text=EP'">
+                        <img src="assets/images/minha-foto.png" alt="Edgar Peixoto" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Edgar+Peixoto&background=4f46e5&color=fff&size=400';">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Jornada Académica -->
+        <!-- Jornada Académica (REORGANIZADA) -->
         <section id="jornada" class="section-padding">
             <div class="container">
                 <div class="section-header reveal">
@@ -473,13 +459,16 @@
                     <p>Base sólida para o desenvolvimento de sistemas complexos.</p>
                 </div>
                 <div class="timeline-grid">
+                    <!-- 1. Tecnólogo (Concluído) -->
                     <div class="timeline-card reveal">
-                        <div class="card-icon"><i class="fa-solid fa-code-pull-request"></i></div>
-                        <span class="status-pill in-progress">Em Curso</span>
-                        <span class="date">Engenharia de Software</span>
-                        <h3>Bacharelado</h3>
-                        <p>Foco em arquitetura de software, escalabilidade e qualidade de sistemas críticos.</p>
+                        <div class="card-icon"><i class="fa-solid fa-terminal"></i></div>
+                        <span class="status-pill completed">Concluído</span>
+                        <span class="date">Análise de Sistemas</span>
+                        <h3>Tecnólogo</h3>
+                        <p>Domínio técnico em lógica de programação, banco de dados e desenvolvimento full-stack.</p>
                     </div>
+
+                    <!-- 2. Pós-Graduação (Concluído) -->
                     <div class="timeline-card reveal">
                         <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
                         <span class="status-pill completed">Concluído</span>
@@ -487,12 +476,14 @@
                         <h3>Pós-Graduação</h3>
                         <p>Governança estratégica e liderança tecnológica aplicada ao ambiente corporativo.</p>
                     </div>
+
+                    <!-- 3. Engenharia de Software (Em Curso) -->
                     <div class="timeline-card reveal">
-                        <div class="card-icon"><i class="fa-solid fa-terminal"></i></div>
-                        <span class="status-pill completed">Concluído</span>
-                        <span class="date">Análise de Sistemas</span>
-                        <h3>Tecnólogo</h3>
-                        <p>Domínio técnico em lógica de programação, banco de dados e desenvolvimento full-stack.</p>
+                        <div class="card-icon"><i class="fa-solid fa-code-pull-request"></i></div>
+                        <span class="status-pill in-progress">Em Curso</span>
+                        <span class="date">Engenharia de Software</span>
+                        <h3>Bacharelado</h3>
+                        <p>Foco em arquitetura de software, escalabilidade e qualidade de sistemas críticos.</p>
                     </div>
                 </div>
             </div>
@@ -550,7 +541,7 @@
                     </div>
                 </div>
                 <div class="portfolio-grid" id="portfolio-grid">
-                    <!-- MAKER PROJECTS -->
+                    <!-- MAKER -->
                     <div class="project-item maker">
                         <div class="project-img"><i class="fa-solid fa-cube"></i></div>
                         <div class="project-info">
@@ -565,15 +556,8 @@
                             <p>Técnicas avançadas de acabamento em resina e FDM.</p>
                         </div>
                     </div>
-                    <div class="project-item maker">
-                        <div class="project-img"><i class="fa-solid fa-microchip"></i></div>
-                        <div class="project-info">
-                            <h5><a href="#">Peças Técnicas</a></h5>
-                            <p>Criação de componentes funcionais para uso industrial.</p>
-                        </div>
-                    </div>
 
-                    <!-- SOFTWARE PROJECTS -->
+                    <!-- SOFTWARE -->
                     <div class="project-item dev">
                         <div class="project-img"><i class="fa-solid fa-gamepad"></i></div>
                         <div class="project-info">
@@ -588,34 +572,13 @@
                             <p>Desenvolvimento de backend robusto para controle de inventário.</p>
                         </div>
                     </div>
-                    <div class="project-item dev">
-                        <div class="project-img"><i class="fa-solid fa-window-restore"></i></div>
-                        <div class="project-info">
-                            <h5><a href="#">Vercel Portfolio</a></h5>
-                            <p>Otimização de performance e SEO em portfólio pessoal.</p>
-                        </div>
-                    </div>
 
-                    <!-- INDUSTRIAL PROJECTS -->
+                    <!-- INDUSTRIAL -->
                     <div class="project-item work">
                         <div class="project-img"><i class="fa-solid fa-chart-line"></i></div>
                         <div class="project-info">
                             <h5><a href="#">Gestão Raia / Búzios</a></h5>
                             <p>Rastreabilidade e controle técnico industrial Vallourec.</p>
-                        </div>
-                    </div>
-                    <div class="project-item work">
-                        <div class="project-img"><i class="fa-solid fa-file-excel"></i></div>
-                        <div class="project-info">
-                            <h5><a href="#">KPI Dashboards</a></h5>
-                            <p>Automação de relatórios de produção em larga escala.</p>
-                        </div>
-                    </div>
-                    <div class="project-item work">
-                        <div class="project-img"><i class="fa-solid fa-sitemap"></i></div>
-                        <div class="project-info">
-                            <h5><a href="#">SharePoint Workflow</a></h5>
-                            <p>Otimização de processos internos e colaboração técnica.</p>
                         </div>
                     </div>
                 </div>
@@ -654,7 +617,7 @@
                         <h2>Vamos conversar?</h2>
                         <p>Aberto a parcerias em desenvolvimento de software ou orçamentos para a Steel Core 3D.</p>
                         <div class="contact-links">
-                            <a href="mailto:edgar.peixoto@devmaker.com"><i class="fa-solid fa-envelope"></i> edgar.peixoto@dev.com</a>
+                            <a href="mailto:edgar.peixoto@exemplo.com"><i class="fa-solid fa-envelope"></i> edgar.peixoto@dev.com</a>
                             <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/edgarpeixoto</a>
                             <a href="#"><i class="fa-brands fa-github"></i> github.com/edgarpeixoto</a>
                         </div>
@@ -682,124 +645,91 @@
         </div>
     </footer>
 
-    <!-- SEÇÃO 2: JAVASCRIPT (LÓGICA) -->
     <script>
         /**
-         * Edgar Peixoto - Portfolio Scripts
+         * Edgar Peixoto - Scripts Otimizados
          */
-
-        // 1. Efeito de Scroll no Navbar
-        window.addEventListener('scroll', () => {
+        
+        // Aguarda todo o carregamento para evitar o ícone de "loading" eterno
+        window.addEventListener('load', () => {
+            console.log("Página totalmente carregada.");
+            
+            // 1. Navbar Scroll
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // 2. Reveal Animation
+            const revealElements = () => {
+                const reveals = document.querySelectorAll('.reveal');
+                reveals.forEach(el => {
+                    const windowHeight = window.innerHeight;
+                    const revealTop = el.getBoundingClientRect().top;
+                    const revealPoint = 100;
+                    if (revealTop < windowHeight - revealPoint) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealElements);
+            revealElements(); // Inicia o check
+
+            // 3. Portfolio Filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            const filterProjects = (category) => {
+                projectItems.forEach(item => {
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        if (category === 'all' || item.classList.contains(category)) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }, 300);
+                });
+            };
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterProjects(btn.getAttribute('data-filter'));
+                });
+            });
+
+            // 4. Form Submission
+            const contactForm = document.getElementById('form-contato');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const submitBtn = contactForm.querySelector('button');
+                    const originalText = submitBtn.innerText;
+                    
+                    submitBtn.innerText = "Enviando...";
+                    submitBtn.disabled = true;
+
+                    setTimeout(() => {
+                        submitBtn.innerText = "Mensagem Enviada!";
+                        submitBtn.style.backgroundColor = "#16a34a";
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            submitBtn.innerText = originalText;
+                            submitBtn.style.backgroundColor = "";
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }, 1500);
+                });
             }
         });
-
-        // 2. Scroll Reveal Animation: Elementos surgindo ao rolar
-        const revealElements = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const revealTop = el.getBoundingClientRect().top;
-                const revealPoint = 120;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    el.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealElements);
-        window.addEventListener('load', revealElements);
-
-        // 3. Portfolio Filter Logic
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectItems = document.querySelectorAll('.project-item');
-
-        const filterProjects = (category) => {
-            let count = 0;
-            projectItems.forEach(item => {
-                // Primeiro esconde tudo
-                item.style.display = 'none';
-                item.style.opacity = '0';
-
-                if (category === 'all') {
-                    // Se for "Todos", mostra apenas os 3 primeiros projetos do grid
-                    if (count < 3) {
-                        item.style.display = 'block';
-                        setTimeout(() => item.style.opacity = '1', 50);
-                        count++;
-                    }
-                } else {
-                    // Se for categoria específica, mostra todos os que pertencem a ela (3 por categoria)
-                    if (item.classList.contains(category)) {
-                        item.style.display = 'block';
-                        setTimeout(() => item.style.opacity = '1', 50);
-                    }
-                }
-            });
-        };
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const category = btn.getAttribute('data-filter');
-                filterProjects(category);
-            });
-        });
-
-        // Inicia o filtro mostrando apenas os 3 primeiros (All)
-        window.addEventListener('DOMContentLoaded', () => {
-            filterProjects('all');
-        });
-
-        // 4. Smooth Scrolling para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        // 5. Feedback visual no envio do formulário
-        const contactForm = document.getElementById('form-contato');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const submitBtn = contactForm.querySelector('button');
-                const originalText = submitBtn.innerText;
-                
-                submitBtn.innerText = "Enviando...";
-                submitBtn.disabled = true;
-
-                // Simulação de sucesso
-                setTimeout(() => {
-                    submitBtn.innerText = "Mensagem Enviada!";
-                    submitBtn.style.backgroundColor = "#16a34a"; // Verde sucesso
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        submitBtn.innerText = originalText;
-                        submitBtn.style.backgroundColor = "";
-                        submitBtn.disabled = false;
-                    }, 3000);
-                }, 1500);
-            });
-        }
     </script>
 </body>
 </html>
