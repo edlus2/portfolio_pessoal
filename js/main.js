@@ -1,83 +1,100 @@
-// 1. Scroll Reveal - Animação ao rolar a página
-const observerOptions = {
-    threshold: 0.15
-};
+window.addEventListener('load', () => {
+    // --- 1. LÓGICA DO MENU MOBILE ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+    const toggleMenu = () => {
+        const isActive = mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        const icon = menuToggle.querySelector('i');
+        if (isActive) {
+            icon.classList.replace('fa-bars-staggered', 'fa-xmark');
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars-staggered');
+            document.body.style.overflow = 'auto';
         }
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    
+    menuLinks.forEach(link => link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('active')) toggleMenu();
+    }));
+
+    // --- 2. EFEITO DA NAVBAR AO SCROLL ---
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        nav.classList.toggle('scrolled', window.scrollY > 50);
     });
-}, observerOptions);
 
-document.querySelectorAll('.section-reveal').forEach(section => {
-    observer.observe(section);
-});
-
-// 2. Filtro de Portfólio
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remover classe active de todos
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Adicionar active no clicado
-        button.classList.add('active');
-
-        const filterValue = button.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-            if (filterValue === 'all') {
-                card.style.display = 'block';
-                setTimeout(() => card.style.opacity = '1', 10);
-            } else {
-                if (card.classList.contains(filterValue)) {
-                    card.style.display = 'block';
-                    setTimeout(() => card.style.opacity = '1', 10);
-                } else {
-                    card.style.opacity = '0';
-                    setTimeout(() => card.style.display = 'none', 300);
-                }
+    // --- 3. SCROLL REVEAL ---
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 80) {
+                el.classList.add('active');
             }
         });
-    });
-});
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
 
-// 3. Efeito Sticky Header
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.padding = '10px 8%';
-        header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-    } else {
-        header.style.padding = '20px 8%';
-        header.style.boxShadow = 'none';
-    }
-});
+    // --- 4. FILTRO DO PORTFÓLIO (LÓGICA EDGAR) ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
 
-// 4. Lógica Simples para o Formulário de Contato
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Aqui você integraria com o Formspree ou outro serviço
-    const btn = contactForm.querySelector('button');
-    const originalText = btn.innerText;
-    
-    btn.innerText = "Enviando...";
-    btn.disabled = true;
+    const filterProjects = (category) => {
+        // Fade-out suave de todos os itens ativos
+        projectItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.95)';
+            // Timeout para esperar a transição do CSS terminar antes de dar display none
+            setTimeout(() => { 
+                item.style.display = 'none'; 
+            }, 300);
+        });
 
-    // Simulando envio
-    setTimeout(() => {
-        btn.innerText = "Mensagem Enviada!";
-        btn.style.background = "#10b981";
-        contactForm.reset();
-        
+        // Entrada dos novos itens
         setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.background = "var(--accent)";
-            btn.disabled = false;
-        }, 3000);
-    }, 1500);
+            if (category === 'all') {
+                // Mostra apenas o primeiro de cada categoria no "Destaque"
+                const categories = ['maker', 'dev', 'work'];
+                categories.forEach(cat => {
+                    const firstItem = document.querySelector(`.project-item.${cat}`);
+                    if (firstItem) renderItem(firstItem);
+                });
+            } else {
+                // Mostra todos da categoria selecionada
+                const selectedItems = document.querySelectorAll(`.project-item.${category}`);
+                selectedItems.forEach(item => renderItem(item));
+            }
+        }, 310); // Tempo ligeiramente maior que o transition do CSS
+    };
+
+    const renderItem = (el) => {
+        el.style.display = 'flex';
+        // Pequeno delay para o navegador registrar o display flex antes de iniciar a opacidade
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'scale(1)';
+        }, 50);
+    };
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterProjects(btn.getAttribute('data-filter'));
+        });
+    });
+
+    // Inicia com os destaques
+    filterProjects('all');
 });

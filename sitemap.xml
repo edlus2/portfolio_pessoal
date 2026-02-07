@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- URL Principal do seu Portfólio -->
+  <url>
+    <loc>https://www.seudominio.com.br/</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Se no futuro você criar páginas separadas para os posts do blog, você adicionaria assim: -->
+  <!-- 
+  <url>
+    <loc>https://www.seudominio.com.br/blog/solid-em-projetos-pequenos</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url> 
+  -->
+</urlset>
+
+<!--<loc>: É o link completo do seu site. Substitua https://www.seudominio.com.br/ pela URL real onde o site está hospedado (ex: sua página no Vercel ou domínio próprio).
+
+<lastmod>: A data da última vez que você alterou o código. Isso avisa aos motores de busca que há conteúdo novo para ler.
+
+<changefreq>: Com que frequência o site muda. Para um portfólio, monthly (mensal) costuma ser o ideal.
+
+<priority>: A importância dessa página em relação ao resto do site (vai de 0.0 a 1.0). Como seu site é uma página única, a Home é a prioridade máxima (1.0).
+
+Dica Extra: Além do sitemap, não esqueça de criar um arquivo chamado robots.txt na mesma pasta, contendo apenas: Sitemap: https://www.seudominio.com.br/sitemap.xml -->
